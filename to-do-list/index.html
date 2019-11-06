@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TO DO LIST APP</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+      #edit-menu{
+          display: none;
+          color:#ffffff;
+      }
+      #pause{
+          position: relative;
+          height: 100vh;
+          width: 100%;
+          background-color: black;
+          opacity: 0.2;
+          display: none;
+          z-index: 5;
+          overflow: hidden;
+      }
+  </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>To Do List App</h1>
+                <span class="h5">track yourself</span><br>
+                <span class="h6" id='date'></span>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-7 col-sm-12">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <div class="lists">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="activity">Add Activity</label>
+                                <input type="text" class="form-control" id="activity" placeholder="Enter new activity">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" placeholder="Enter Description" id="description"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-success" id="add-items">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" id="edit-menu">
+            <div class="col-md-10 offset-1">
+                <div class="card mt-3 bg-dark">
+                    <div class="card-body">
+                        <h3 class="card-title">Edit Menu</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="activity">Activity Title</label>
+                                <input type="text" class="form-control" id="edit-title">
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea class="form-control" id="edit-description"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="activity">Status</label>
+                                <input type="text" class="form-control" id="edit-status" readonly>
+                            </div>
+                            <button type="submit" class="btn btn-warning" id="edit-btn">Edit</button>
+                            <button  class="btn btn-danger" id="delete-btn">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script/script.js" type="module"></script>
+</body>
+</html>
