@@ -62,9 +62,14 @@ class NoteApp{
     deleteNote(e){
         let noteContainer = e.target.parentElement
         let id= noteContainer.id;
+        id=parseInt(id.substring(15));
         let allNotes=localStorage.getItem('notes');
         allNotes=JSON.parse(allNotes);
-        allNotes.splice(id.substring(15)-1,1);
+        for(let i=0;i<allNotes.length;i++){
+            if(allNotes[i]['id']==id){
+                allNotes.splice(i,1);
+            }
+        }
         localStorage.removeItem('notes');
         localStorage.setItem('notes',JSON.stringify(allNotes));
         this.noteBox.removeChild(e.target.parentElement);

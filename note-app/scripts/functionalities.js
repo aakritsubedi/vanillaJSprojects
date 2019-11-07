@@ -26,6 +26,7 @@ function displayAddMenu(){
 function addNote(e){
     e.preventDefault();
     notes.storeNote();
+    addBtn.innerText='+';
     addMenu.style.display='none';
-    clickCount=0;
+    clickCount--;
 }
