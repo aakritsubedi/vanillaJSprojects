@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Note Keeping App</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+  <style>
+    #wrapper{
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      background-color: #ffffff;
+    }
+    #app-btn{
+      position: absolute;
+      bottom:5px;
+      right:5px;
+      border-radius: 50%;
+      font-weight: bolder;
+    }
+    #app-btn:hover{
+      background-color: #EEC213;
+    }
+    .add-menu{
+      width: 350px;
+      border: 1px solid black;
+      display: none;
+      position: absolute;
+      bottom: 25px;
+      right: 5px;
+      padding:5px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+    #note{
+      height: 250px;
+      border: 1px solid black;
+      box-sizing: border-box;
+      margin:5px;
+      border-bottom-right-radius: 20px;
+      -webkit-box-shadow: 8px 10px 5px 0px rgba(87, 85, 85, 0.75);
+      -moz-box-shadow: 8px 10px 5px 0px rgba(87, 85, 85, 0.75);
+      box-shadow: 8px 10px 5px 0px rgba(87, 85, 85, 0.75);
+      padding:5px;
+      font-family: 'McLaren', cursive;
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+    <div class="container-fluid" id="wrapper">
+      <div class="row" id="note-box">
+                
+      </div>  
+      <div class="add-menu">
+          <form>
+              <div class="form-group">
+                  <label for="note-desc">Note</label>
+                  <textarea class="form-control" placeholder="Enter Note" id="note-desc" rows="8"></textarea>
+              </div>
+              <button type="submit" class="btn btn-success" id="add-note">Add</button>
+          </form>
+      </div>
+      <button class="btn btn-success" id="app-btn">+</button>
+    </div>
+    <script src="scripts/functionalities.js" type="module"></script>
+</body>
+</html>
