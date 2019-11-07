@@ -36,6 +36,7 @@ var clickCount = 0;
 function changeToDark(that){
     let lightBg=document.querySelectorAll('.bg-light');
     for(let i=0;i<lightBg.length;i++){
+        lightBg[i].style.border='2px solid rgb(255,255,255)';
         lightBg[i].classList.remove('bg-light');
         lightBg[i].classList.add('bg-dark');
     }
@@ -52,6 +53,7 @@ function changeToDark(that){
 function changeToLight(that){
     let lightBg=document.querySelectorAll('.bg-dark');
     for(let i=0;i<lightBg.length;i++){
+        lightBg[i].style.border='1px solid rgba(0,0,0,.125)';
         lightBg[i].classList.remove('bg-dark');
         lightBg[i].classList.add('bg-light');
     }
