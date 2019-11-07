@@ -26,5 +26,6 @@ function displayAddMenu(){
 function addNote(e){
     e.preventDefault();
     notes.storeNote();
-    e.target.style.display='none';
+    addMenu.style.display='none';
+    clickCount=0;
 }
