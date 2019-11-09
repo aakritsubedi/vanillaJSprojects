@@ -83,3 +83,17 @@ body{
     transition: ease 2s;
     border:1px solid #000000;
 }
+.scoreboard{
+    line-height: 35px;
+    width: 50px;
+    position: absolute;
+    right:-75px;
+    top: 5px;
+    background-color: #4C4B4B;
+    color: #ffffff;
+    padding:5px 25px;
+    border-radius: 5px;
+    font-size: 22px;
+    text-align: center;
+    transition: ease-in-out 5s;
+}

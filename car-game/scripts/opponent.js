@@ -14,7 +14,7 @@ class Opponents{
     }
     init(road){
         this.opponentCar=['Ambulance.png','Audi.png','Car.png','Mini_truck.png','Mini_van.png','Police.png','taxi.png','truck.png'];
-        this.top=0;
+        this.top=-150;
         this.road=road;
         this.createOpponent();
     }
@@ -32,23 +32,28 @@ class Opponents{
     createOpponent(){
         this.opponentLane=randomNo(1,3);
         let car = document.createElement('div');
-        let path ='images/'+this.opponentCar[randomNo(0,2)];
+        let path ='images/'+this.opponentCar[randomNo(0,7)];
         car.style.transform='rotate(180deg)';
         car.style.backgroundImage='url('+path+')';
+        // car.style.backgroundColor='green';
         car.style.height = '175px';
         car.style.width = '150px';
         car.style.position = 'absolute';
         car.style.backgroundRepeat='no-repeat';
         car.style.backgroundSize='contain';
         car.style.backgroundPosition='center';
-        car.style.top='0px';
+        car.style.top='-150px';
         this.findCarLeftPostion();
         car.style.left=this.carLeftPos+'px';
         this.opponent=this.road.appendChild(car);
     }
     moveDown(){
-        this.top += 1.3;
+        this.top += 2;
         this.opponent.style.top = this.top+'px';
+    }
+    destroyOpponent(){
+        this.opponent.parentElement.removeChild(this.opponent);
+        console.log('destroyed');
     }
 }
 export default Opponents;
