@@ -1,4 +1,4 @@
-import Box from '/box.js';
+import Box from './box.js';
 
 class Game {
 
