@@ -1,0 +1,41 @@
+/* Reset CSS */
+*{
+    margin:0px;
+    padding: 0px;
+}
+
+/* Style CSS */
+.container{
+    width: 100%;
+    height:100vh;
+    background-color: #74b9ff;
+}
+.container h2{
+    text-align: center;
+    font-weight: normal;
+    line-height: 50px;
+    text-decoration: underline;
+}
+.score {
+    background-color: #000000;
+    color: #ffffff;
+    /* display:inline-block; */
+    line-height: 40px;
+    padding:10px;
+    border: 2px solid #ffffff;
+    float: right;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+#title{
+    /* display: inline-block; */
+    float: left;
+    padding-left:50px;
+    line-height: 40px;
+}
+
+.clearfix{
+    display: table;
+    content: " ";
+    clear: both;
+}
