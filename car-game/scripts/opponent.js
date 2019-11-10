@@ -3,18 +3,20 @@ function randomNo(lower,upper) {
     return randNo;
 }
 class Opponents{
-    constructor(road){
+    constructor(road,speed){
         this.opponentCar = null;
         this.road=null;
         this.opponentLane=null;
         this.carLeftPos=null;
         this.opponent=null;
+        this.speed=null;
         this.top=null;
-        this.init(road);
+        this.init(road,speed);
     }
-    init(road){
+    init(road,speed){
         this.opponentCar=['Ambulance.png','Audi.png','Car.png','Mini_truck.png','Mini_van.png','Police.png','taxi.png','truck.png'];
         this.top=-150;
+        this.speed= (speed>10) ? speed/3:1.5;
         this.road=road;
         this.createOpponent();
     }
@@ -48,12 +50,20 @@ class Opponents{
         this.opponent=this.road.appendChild(car);
     }
     moveDown(){
-        this.top += 2;
+        this.top += this.speed;
         this.opponent.style.top = this.top+'px';
     }
     destroyOpponent(){
         this.opponent.parentElement.removeChild(this.opponent);
         console.log('destroyed');
+    }
+    makeFire(){
+        let path ='images/fire.gif';
+        this.opponent.style.transform='rotate(0deg)';
+        this.opponent.style.backgroundImage='url('+path+')';
+        setTimeout(()=>{
+            this.destroyOpponent();
+        },200);
     }
 }
 export default Opponents;
